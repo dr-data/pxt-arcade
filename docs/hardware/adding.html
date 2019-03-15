@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+	<meta charset="UTF-8">
+	<title>MakeCode Arcade</title>
+	<meta name="Description" content="&lt;strong&gt;Warning&lt;/strong&gt;: this document is preliminary and is going to change.
+It’s fine build prototypes according to it and experiment,
+but not to go to production." />
+
+	
+<!-- include meta.html -->
+<!-- This file is typically overriden by the target, with own Twitter
+     account etc. Most data is taken from the theme file though.  
+  -->
+
+<!-- include robotsmeta.html -->
+
+<!-- end include robotsmeta.html -->
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@msmakecode" />
+<meta name="twitter:title" content="MakeCode Arcade" />
+<meta name="twitter:description" content="&lt;strong&gt;Warning&lt;/strong&gt;: this document is preliminary and is going to change.
+It’s fine build prototypes according to it and experiment,
+but not to go to production." />
+<meta name="twitter:image" content="/static/hardware/buttons.png" />
+
+<meta property="og:title" content="MakeCode Arcade" />
+<meta property="og:site_name" content="Microsoft MakeCode" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="&lt;strong&gt;Warning&lt;/strong&gt;: this document is preliminary and is going to change.
+It’s fine build prototypes according to it and experiment,
+but not to go to production." />
+<meta property="fb:app_id" content="" />
+<meta property="og:image" content="/static/hardware/buttons.png" />
+
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="">
+<link rel="icon" type="image/png" href="">
+<link rel="shortcut icon" href="">
+<meta name="theme-color" content="">
+
+<!-- end include meta.html -->
+
+	
+<!-- include head.html -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+
+<link rel="stylesheet" data-rtl="/blb/rtlsemantic.css" href="/pxt-arcade/semantic.css" />
+<link id="blocklycss"  data-rtl="/blb/rtlblockly.css" rel="stylesheet" href="/pxt-arcade/blockly.css" />
+<link rel="stylesheet" href="/pxt-arcade/docfiles/style.css" />
+<link rel="stylesheet" href="/pxt-arcade/docfiles/vs.css" />
+<link rel="stylesheet" href="/pxt-arcade/docfiles/target.css" />
+
+<script src="/pxt-arcade/jquery.js" type="text/javascript"></script>
+<script src="/pxt-arcade/semantic.js" type="text/javascript"></script>
+<script src="/pxt-arcade/docfiles/target.js" type="text/javascript"></script>
+<script src="/pxt-arcade/embed.js" type="text/javascript"></script>
+<script src="/pxt-arcade/docfiles/docs.js" type="text/javascript"></script>
+
+<style>
+    
+</style>
+
+<!-- end include head.html -->
+
+
+</head>
+
+<body id='root' class='root'>
+
+	<div id="accessibleMenu" class="ui accessibleMenu borderless fixed menu" role="menubar">
+		
+            <a href="#maincontent" class="ui item link" tabindex="0" role="menuitem">Skip to main content</a>
+        
+	</div>
+
+
+	
+<!-- include tocheader.html -->
+<div class="ui vertical accent inverted sidebar menu left hideprint">
+    <div class="item">
+        <a href="/pxt-arcade/docs/.html" class="header focused" tabindex="0" title="Go to editor">
+            <img aria-hidden="true" role="presentation" class="ui mini image" src="docs/static/logo.svg" />
+        </a>
+        Documentation
+    </div>
+    <div class="item search">
+        <form id="tocsearch1" role="form" method="get" action="https://www.bing.com/search">
+            <div class="ui fluid icon input">
+                <input type="hidden" name="q1" value="site:https://arcade.makecode.com/" />
+                
+                <input type="search" name="q" placeholder="Search..." aria-label="Search Documentation">
+                <i onclick="document.getElementById('tocsearch1').submit();" tabindex="0" class="search link icon" aria-label="Search" role="button"></i>
+            
+            </div>
+        </form>
+    </div>
+    <!-- TOC Menu -->
+    <div class="menuContainer">
+        
+    <a class="item " href="/pxt-arcade/docs/about.html" role="menuitem">About</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/faq.html" role="menuitem">FAQ</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/projects.html" role="menuitem">Projects</a>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/reference.html" role="menu">Reference</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/reference/sprites.html" role="menuitem">sprites</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/controller.html" role="menuitem">controller</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/game.html" role="menuitem">game</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/music.html" role="menuitem">music</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/scene.html" role="menuitem">scene</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/info.html" role="menuitem">info</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/images.html" role="menuitem">images</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/blocks.html" role="menu">Blocks</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/blocks/on-start.html" role="menuitem">On Start</a>
+
+
+    <div class="ui  accordion item visible" role="tree" title="">
+        <div class=" title">
+            <i class="dropdown icon"></i>
+            <a class="header" role="treeitem" aria-expanded="false" href="/pxt-arcade/docs/blocks/loops.html">Loops</a>
+        </div>
+        <div class=" content">
+            
+    <a class="item " href="/pxt-arcade/docs/blocks/loops/repeat.html" role="menuitem">repeat</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/loops/for.html" role="menuitem">for</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/loops/while.html" role="menuitem">while</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/loops/for-of.html" role="menuitem">for of</a>
+
+        </div>
+    </div>
+
+
+    <div class="ui  accordion item visible" role="tree" title="">
+        <div class=" title">
+            <i class="dropdown icon"></i>
+            <a class="header" role="treeitem" aria-expanded="false" href="/pxt-arcade/docs/blocks/logic.html">Logic</a>
+        </div>
+        <div class=" content">
+            
+    <a class="item " href="/pxt-arcade/docs/blocks/logic/if.html" role="menuitem">if</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/logic/boolean.html" role="menuitem">Boolean</a>
+
+        </div>
+    </div>
+
+
+    <div class="ui  accordion item visible" role="tree" title="">
+        <div class=" title">
+            <i class="dropdown icon"></i>
+            <a class="header" role="treeitem" aria-expanded="false" href="/pxt-arcade/docs/blocks/variables.html">Variables</a>
+        </div>
+        <div class=" content">
+            
+    <a class="item " href="/pxt-arcade/docs/blocks/variables/assign.html" role="menuitem">assign</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/variables/change.html" role="menuitem">change var</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/variables/var.html" role="menuitem">var</a>
+
+        </div>
+    </div>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/math.html" role="menuitem">Math</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/javascript-blocks.html" role="menuitem">JavaScript blocks</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/custom.html" role="menuitem">Custom blocks</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/javascript.html" role="menu">JavaScript</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/javascript/call.html" role="menuitem">Calling</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/sequence.html" role="menuitem">Sequencing</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/variables.html" role="menuitem">Variables</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/operators.html" role="menuitem">Operators</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/statements.html" role="menuitem">Statements</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/functions.html" role="menuitem">Functions</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/types.html" role="menuitem">Types</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/classes.html" role="menuitem">Classes</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/interfaces.html" role="menuitem">Interfaces</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/generics.html" role="menuitem">Generics</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/types.html" role="menu">Types</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/types/number.html" role="menuitem">Number</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/string.html" role="menuitem">String</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/boolean.html" role="menuitem">Boolean</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/array.html" role="menuitem">Array</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/function.html" role="menuitem">Function</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/image.html" role="menuitem">Image</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/sprite.html" role="menuitem">Sprite</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/hardware.html" role="menu">Current Hardware</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/hardware/adding.html" role="menuitem">Adding New Board</a>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/lessons.html" role="menu">Lessons</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/lessons/cherry-pickr.html" role="menuitem">Cherry Pickr</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/lessons/barrel-dodger.html" role="menuitem">Barrel Dodger</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/courses.html" role="menu">Courses</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/courses/csintro1.html" role="menuitem">CS Intro 1</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/courses/csintro2.html" role="menuitem">CS Intro 2</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/courses/csintro3.html" role="menuitem">CS Intro 3</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/javascript-games.html" role="menu">JavaScript Games</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/examples/asteroids.html" role="menuitem">Asteroids</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/bouncer-bucket.html" role="menuitem">Bouncer Bucket</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/car-race.html" role="menuitem">Car Race</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/collisions.html" role="menuitem">Collisions</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/duck.html" role="menuitem">Duck</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/guess-the-letter.html" role="menuitem">Guess the Letter</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/jumper.html" role="menuitem">Jumper</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/mega-bounce.html" role="menuitem">Mega Bounce</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/palette.html" role="menuitem">Pallete</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/runner.html" role="menuitem">Runner</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/snake.html" role="menuitem">Snake</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/sorting.html" role="menuitem">Sorting</a>
+
+        </div>
+    </div>
+
+    </div>
+</div>
+
+<div class="ui fixed accent borderless inverted main menu hideprint">
+  <div class="ui container">
+    
+            <a id="togglesidebar" class="launch icon item" tabindex="0" title="Side menu" aria-label="Side menu" role="menu" aria-expanded="false">
+                <i class="content icon"></i>
+            </a>
+        
+
+    <div class="item">
+        
+    </div>
+    
+    <div class="right menu">
+        <a href="/pxt-arcade/docs/.html" class="header item" tabindex="0" title="Go to editor">
+            <img aria-hidden="true" role="presentation" class="ui mini image" src="docs/static/logo.svg" />
+        </a>
+    </div>
+  </div>
+</div>
+<!-- end include tocheader.html -->
+
+
+	<div id="docs" class="pusher">
+
+		
+<!-- include toc.html -->
+<div class="toc ui accent inverted hideprint">
+    <div class="ui vertical accent inverted sticky menu tocmenu">
+        <div class="item">
+            <a href="/pxt-arcade/docs/.html" class="header focused" tabindex="0" title="Go to editor">
+                <img aria-hidden="true" role="presentation" class="ui mini image" src="docs/static/logo.svg" />
+            </a>
+            Documentation
+        </div>
+        <div class="item search">
+            <form id="tocsearch2" role="form" method="get" target="_blank" action="https://www.bing.com/search">
+                <div class="ui fluid icon input">
+                    <input type="hidden" name="q1" value="site:https://arcade.makecode.com/" />
+                    
+                <input type="search" name="q" placeholder="Search..." aria-label="Search Documentation">
+                <i onclick="document.getElementById('tocsearch2').submit();" tabindex="0" class="search link icon" aria-label="Search" role="button"></i>
+            
+                </div>
+            </form>
+        </div>
+        <!-- TOC Menu -->
+        <div class="menuContainer">
+            
+    <a class="item " href="/pxt-arcade/docs/about.html" role="menuitem">About</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/faq.html" role="menuitem">FAQ</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/projects.html" role="menuitem">Projects</a>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/reference.html" role="menu">Reference</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/reference/sprites.html" role="menuitem">sprites</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/controller.html" role="menuitem">controller</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/game.html" role="menuitem">game</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/music.html" role="menuitem">music</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/scene.html" role="menuitem">scene</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/info.html" role="menuitem">info</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/reference/images.html" role="menuitem">images</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/blocks.html" role="menu">Blocks</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/blocks/on-start.html" role="menuitem">On Start</a>
+
+
+    <div class="ui  accordion item visible" role="tree" title="">
+        <div class=" title">
+            <i class="dropdown icon"></i>
+            <a class="header" role="treeitem" aria-expanded="false" href="/pxt-arcade/docs/blocks/loops.html">Loops</a>
+        </div>
+        <div class=" content">
+            
+    <a class="item " href="/pxt-arcade/docs/blocks/loops/repeat.html" role="menuitem">repeat</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/loops/for.html" role="menuitem">for</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/loops/while.html" role="menuitem">while</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/loops/for-of.html" role="menuitem">for of</a>
+
+        </div>
+    </div>
+
+
+    <div class="ui  accordion item visible" role="tree" title="">
+        <div class=" title">
+            <i class="dropdown icon"></i>
+            <a class="header" role="treeitem" aria-expanded="false" href="/pxt-arcade/docs/blocks/logic.html">Logic</a>
+        </div>
+        <div class=" content">
+            
+    <a class="item " href="/pxt-arcade/docs/blocks/logic/if.html" role="menuitem">if</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/logic/boolean.html" role="menuitem">Boolean</a>
+
+        </div>
+    </div>
+
+
+    <div class="ui  accordion item visible" role="tree" title="">
+        <div class=" title">
+            <i class="dropdown icon"></i>
+            <a class="header" role="treeitem" aria-expanded="false" href="/pxt-arcade/docs/blocks/variables.html">Variables</a>
+        </div>
+        <div class=" content">
+            
+    <a class="item " href="/pxt-arcade/docs/blocks/variables/assign.html" role="menuitem">assign</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/variables/change.html" role="menuitem">change var</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/variables/var.html" role="menuitem">var</a>
+
+        </div>
+    </div>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/math.html" role="menuitem">Math</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/javascript-blocks.html" role="menuitem">JavaScript blocks</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/blocks/custom.html" role="menuitem">Custom blocks</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/javascript.html" role="menu">JavaScript</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/javascript/call.html" role="menuitem">Calling</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/sequence.html" role="menuitem">Sequencing</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/variables.html" role="menuitem">Variables</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/operators.html" role="menuitem">Operators</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/statements.html" role="menuitem">Statements</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/functions.html" role="menuitem">Functions</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/types.html" role="menuitem">Types</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/classes.html" role="menuitem">Classes</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/interfaces.html" role="menuitem">Interfaces</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/javascript/generics.html" role="menuitem">Generics</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/types.html" role="menu">Types</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/types/number.html" role="menuitem">Number</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/string.html" role="menuitem">String</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/boolean.html" role="menuitem">Boolean</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/array.html" role="menuitem">Array</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/function.html" role="menuitem">Function</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/image.html" role="menuitem">Image</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/types/sprite.html" role="menuitem">Sprite</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/hardware.html" role="menu">Current Hardware</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/hardware/adding.html" role="menuitem">Adding New Board</a>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/lessons.html" role="menu">Lessons</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/lessons/cherry-pickr.html" role="menuitem">Cherry Pickr</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/lessons/barrel-dodger.html" role="menuitem">Barrel Dodger</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/courses.html" role="menu">Courses</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/courses/csintro1.html" role="menuitem">CS Intro 1</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/courses/csintro2.html" role="menuitem">CS Intro 2</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/courses/csintro3.html" role="menuitem">CS Intro 3</a>
+
+        </div>
+    </div>
+
+
+    <div class="item" title="">
+        <a class="header " href="/pxt-arcade/docs/javascript-games.html" role="menu">JavaScript Games</a>
+        <div class="menu">
+            
+    <a class="item " href="/pxt-arcade/docs/examples/asteroids.html" role="menuitem">Asteroids</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/bouncer-bucket.html" role="menuitem">Bouncer Bucket</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/car-race.html" role="menuitem">Car Race</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/collisions.html" role="menuitem">Collisions</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/duck.html" role="menuitem">Duck</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/guess-the-letter.html" role="menuitem">Guess the Letter</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/jumper.html" role="menuitem">Jumper</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/mega-bounce.html" role="menuitem">Mega Bounce</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/palette.html" role="menuitem">Pallete</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/runner.html" role="menuitem">Runner</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/snake.html" role="menuitem">Snake</a>
+
+
+    <a class="item " href="/pxt-arcade/docs/examples/sorting.html" role="menuitem">Sorting</a>
+
+        </div>
+    </div>
+
+        </div>
+    </div>
+</div>
+<!-- end include toc.html -->
+
+
+		<div class="article" id="maincontent">
+			<div class="article-inner">
+
+				
+<!-- include header.html -->
+<div class="ui one column padded grid hideprint hidemobile">
+    <div class="column">
+        
+    </div>
+</div>
+
+<!-- end include header.html -->
+
+
+				<div class="main ui container fluid mainbody">
+					
+            <button id="printbtn" class="circular ui icon right floated button hideprint" title="Print this page">
+                <i class="icon print"></i>
+            </button>
+         
+    <div class="ui text">
+        <h1 id="adding-your-own-hardware-to-arcade">Adding your own hardware to Arcade</h1>
+    <div class="ui info message">
+        <div class="content">
+            <p><strong>Warning</strong>: this document is preliminary and is going to change.
+It’s fine build prototypes according to it and experiment,
+but not to go to production.</p>
+
+        </div>
+    </div>
+<p>Arcade features the following virtual device specification:</p>
+<ul>
+<li>160x120 pixel screen</li>
+<li>15 colors plus transparency; user-controllable palette</li>
+<li>4 directional buttons, 2 action buttons (A and B), 1 utility (menu/select/pause) button, 1 reset button</li>
+<li>1-channel sound output (either a DAC or PWM with DMA support); this is multiplexed in software</li>
+</ul>
+<p>Students can run and create Arcade games in the browser,
+either on a computer or a mobile device.</p>
+<p>While the focus of Arcade is clearly games, the screen and the buttons give flexibility
+in the kind of programs that can be created to teach various computer science concepts.</p>
+<p>The focus of the Arcade API design is ease of use. The entire screen is typically
+re-drawn on every frame, and the users can place sprites in arbitrary
+places on the screen.</p>
+<p>Not coincidentally this specification also lends itself to a hardware implementation.</p>
+<p>One screen at 160x120x4 bits takes a little under 10kB. We need at least two
+screens for double-buffering and the user is very likely to use two or three more for various
+sprite operations. This, together with heap fragmentation concerns,
+ effectively requires the hardware to have <strong>at least 96kB of RAM</strong>,
+though more is clearly better. In addition, <strong>512kB of flash and 64MHz or more</strong> are recommended,
+but these usually follow from the RAM size.</p>
+<p>We currently support two hardware variants which match these criteria:</p>
+<ul>
+<li><strong>D51</strong> based on Microchip <strong>ATSAMD51G19A</strong> (Cortex M4F, 192kB of RAM, 512kB of flash, 120MHz)</li>
+<li><strong>F4</strong> (formely F401) based on one of the ST Micro <strong>STM32F4xx</strong> chips:<ul>
+<li><strong>STM32F401xE</strong> (Cortex M4F, 96kB of RAM, 512kB of flash, 84MHz)</li>
+<li><strong>STM32F411xE</strong> (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)</li>
+<li><strong>STM32F412xE</strong> (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)</li>
+<li><strong>STM32F412xG</strong> (Cortex M4F, 256kB of RAM, 1024kB of flash, 96MHz)</li>
+</ul>
+</li>
+</ul>
+<p>The STM32F41x are listed at 100MHz, but to support USB we need to run them at 96MHz.
+We support 48 pin as well as larger packages.
+Only STM32F412 in 64 pin and larger packages supports parallel screen interface,
+which is required if you want to use ILI9341 320x240 screen.</p>
+<p>Additionally, we’re considering adding the following in the future:</p>
+<ul>
+<li><strong>N840</strong> based on Nordic <strong>NRF52840</strong> (Cortex M4F, 256kB of RAM, 1024kB of flash, 64MHz)</li>
+</ul>
+<p>Other choices are possible, and we would love to hear your feedback.</p>
+<p>Other than the MCU the two variants contain the same components (with optional variations
+in the power supply).</p>
+<ul>
+<li>160x128 color TFT screen based on ST7735 or ILI9163C controller chip in SPI version <ul>
+<li>we skip using 8 bottom rows of the screen to upscaling to 320x240</li>
+</ul>
+</li>
+<li>alternatively, 320x240 color TFT screen based on ILI9341 controller chip in 
+8 bit parallel version (not SPI!); this requires STM32F412RE or better and is not
+implemented yet</li>
+<li>6 buttons, for directions, A, and B</li>
+<li>2 buttons for reset and menu</li>
+<li>female microUSB connector for power and UF2 programming</li>
+<li>ESD protection for the microUSB</li>
+<li>a 3.3V regulator</li>
+<li>a transistor for power management</li>
+<li>JST connector for battery; this is optional if the battery is integrated</li>
+<li>optional LiPo charging circuit</li>
+<li>optional accelerometer</li>
+<li>a magnetic speaker (transducer) with some sort of amplifier</li>
+<li>an optional <a target="_blank" rel="nofollow noopener" href="https://jacdac.org/">JACDAC</a> connector</li>
+<li><strong>no</strong> power LED - please skip that one, unless you’re also including PWREN line, which will shut it down; otherwise auto power-off will be difficult</li>
+</ul>
+<p>If you have good reasons to use a different screen or accelerometer, let us know.</p>
+<h2 id="schematics">Schematics</h2><p>We are aware of various configuration needs for screen controllers, as well as different
+accelerometers etc. coming in future. We generate the same UF2 file
+for all boards of a given variant, and have the runtime look for configuration
+values in the bootloader area.</p>
+<p>See <a target="_blank" rel="nofollow noopener" href="https://github.com/Microsoft/uf2/blob/master/cf2.md">https://github.com/Microsoft/uf2/blob/master/cf2.md</a> for more details on the format.
+The bootloaders can be binary patched with new configuration data if needed.</p>
+<p>The configuration data also includes assignment of a GPIO pin header.
+Generally, the header isn’t essential to this board, but it’s recommended
+to at least leave holes for people to solder it in.</p>
+<p>The exact pins where the various <code>BTN_*</code>, <code>JACK_*</code>, and <code>DISPLAY_*</code> lines are connected
+is specified in the bootloader. You can change them, as described above.</p>
+<h3 id="buttons">Buttons</h3><p>The 4 directional buttons, the A/B buttons, and the MENU button are to be connected
+to GND and a respective MCU pin, as in the schematics below.
+There is an internal pull-up enabled on the MCU, so no need for external
+pull-ups.
+The RESET button is to be connected to the MCU hardware RESET line (refer to the MCU
+documentation how to exactly connect it and if it needs any additional components).</p>
+<p>The schematics also shows the recommended button arrangement - directional buttons
+on the left of the screen, while A/B are on the right of the screen.
+A is above and to the right of B.</p>
+<p>MENU is best placed somewhere below the other buttons, and RESET is best placed next to
+the USB connector.</p>
+<p><img class="ui centered image" src="/static/hardware/buttons.png" alt="Button connection"></p>
+<h3 id="screen">Screen</h3><h4 id="st7735-at-160x128">ST7735 at 160x128</h4><p>The screen needs to be connected to the hardware SPI module.</p>
+<p>On some screens:</p>
+<ul>
+<li>the RS/DC is called A0</li>
+<li>the DATA is called MOSI or SDA</li>
+<li>the CLOCK is called SCK or SCL</li>
+<li>LEDK is called LED-</li>
+<li>LEDA is called LED+</li>
+<li>RESET is called RST</li>
+<li>most screens don’t have MISO line</li>
+</ul>
+<p>The purpose of the <code>DISPLAY_BL</code> is to dim or shut off the screen.
+The schematics shows one way of doing this.
+Experiment with the value of <code>R2</code> to get optimal brightness.</p>
+<p>We have found the following part numbers for screens:</p>
+<ul>
+<li><a target="_blank" rel="nofollow noopener" href="http://www.microtech-lcd.com/tftlcd/TFT-LCD-Module9.html">MTF0177SN-10</a></li>
+<li><a target="_blank" rel="nofollow noopener" href="https://www.ezsolutionkr.com/tft-lcd-z180sn009-v0-0">Z180SN009</a></li>
+</ul>
+<p>However, others are also available - searching for ST7735 or ILI9163 usually yields
+the right ones. They are around $2.</p>
+<p><img class="ui centered image" src="/static/hardware/screen.png" alt="Screen connection"></p>
+<h4 id="ili9134-at-320x240">ILI9134 at 320x240</h4><p>This is not implemented yet.</p>
+<h3 id="audio">Audio</h3><p>The board should have a buzzer. You need to figure out how to connect it properly
+and what kind of amplifier you might need.
+Below is a schematic with a simple low-pass filter and a headphone jack for audio.
+You only need low-pass filter when there is no DAC on board (you need low-pass
+filter for F4, but you don’t need it for D51).</p>
+<p>The headphone jack is optional.
+Also note that this is not for JACDAC networking, for that see below.</p>
+<p><img class="ui centered image" src="/static/hardware/audio.png" alt="Audio connection"></p>
+<h3 id="jacdac">JACDAC</h3>
+    <div class="ui info message">
+        <div class="content">
+            <p><strong>Warning</strong>: JACDAC is under development now and is going to change.
+It’s fine build prototypes according to this schematics,
+but not to go to production just yet.</p>
+
+        </div>
+    </div>
+<p><a target="_blank" rel="nofollow noopener" href="https://jacdac.org">JACDAC</a> is a protocol for networking over a single-wire
+connection with optional power delivery.
+It lets you play multiplayer games by connecting two (or more with a headphone splitter) Arcades
+together.
+You can implement JACDAC with or without power delivery, by using one of the
+schematics below.</p>
+<p>While the schematics use a 3.5mm jack connector with switches, you can also use
+one without switches, as they are not used.</p>
+<h4 id="jacdac-with-power-delivery">JACDAC with power delivery</h4><p>The F1 fuse can be replaced with 500mA (or similar) current limiting circuit.</p>
+<p>Power delivery is useful when an external accessory is connected,
+which requires power (eg., a joystick, a BLE dongle, or a WiFi dongle).
+There are currently no accessories available yet though.</p>
+<p><img class="ui centered image" src="/static/hardware/fulljacdac.png" alt="JACDAC with power"></p>
+<h4 id="jacdac-without-power-delivery">JACDAC without power delivery</h4><p>This is sufficient to play multiplayer games.</p>
+<p><img class="ui centered image" src="/static/hardware/nopowerjacdac.png" alt="JACDAC without power"></p>
+<h3 id="accelerometer">Accelerometer</h3><p>We currently support the following accelerometers:</p>
+<ul>
+<li>LIS3DH</li>
+<li>MMA8453</li>
+<li>MMA8653</li>
+</ul>
+<p>If requested, we can add support for MSA300, which seems to be cheaper.</p>
+<p>The accelerometers should have the SDA, SCL and INT1 lines connected
+to respective <code>ACCELEROMETER_*</code> lines as defined in the bootloader.
+If possible, keep this separate from the SDA/SCL exposed on the header,
+so the one on the header can be used as a general digital IO.</p>
+<h2 id="vibration-motor">Vibration motor</h2><p>An optional vibration motor can be connected to <code>VIBRATION</code> line.
+Software will keep it low during normal operation, and pull it high
+to activate the motor.</p>
+<h2 id="power-management">Power management</h2><p>The board will have auto-power-off feature to improve battery life.</p>
+<p>Currently, we plan to shut down display back light, and accelerometer if any,
+and put the CPU in sleep mode.</p>
+<p>There is an optional <code>PWREN</code> pin. If defined, the software will pull it high on
+boot, and keep it low during sleep.
+The idea is for it to control power supply to display, accelerometer,
+and other on-board components. </p>
+<p>Please do not provide a power LED that cannot be turned off from the MCU.
+It’s fine for power LED supply to be controlled by PWREN.</p>
+<p>An optional <code>BATTSENSE</code> can be connected to a voltage divider and to battery.
+This is not yet supported in software.</p>
+<h2 id="leds">LEDs</h2><p>Up to 4 LEDs can be defined.
+The first two can be also used for JACDAC status.</p>
+<h2 id="pin-header">Pin header</h2><p>Following is the recommended pinout of the header.
+Header is optional, but at least holes are nice to have.
+If there’s limited space for header pins D10-D11 should be dropped,
+and then D8-D9.</p>
+<p>The assignment is shown for 64 pin (or larger) version of F4.
+For the 48 pin version, drop D8-D11 and connect accelerometer SDA/SCL
+on the header.</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Function</th>
+<th>F4</th>
+<th>F4-48</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>TX</td>
+<td>PA02</td>
+<td>PA02</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>RX</td>
+<td>PA03</td>
+<td>PA03</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>MOSI</td>
+<td>PB15</td>
+<td>PB15</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>MISO</td>
+<td>PB14</td>
+<td>PB14</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>SCK</td>
+<td>PB13</td>
+<td>PB13</td>
+</tr>
+<tr>
+<td>D6</td>
+<td>SCL</td>
+<td>PB08</td>
+<td>PB10</td>
+</tr>
+<tr>
+<td>D7</td>
+<td>SDA</td>
+<td>PB07</td>
+<td>PB03</td>
+</tr>
+<tr>
+<td>D8</td>
+<td>SERVO1</td>
+<td>PA00</td>
+<td>-</td>
+</tr>
+<tr>
+<td>D9</td>
+<td>SERVO2</td>
+<td>PA01</td>
+<td>-</td>
+</tr>
+<tr>
+<td>D10</td>
+<td>I/O</td>
+<td>PC05</td>
+<td>-</td>
+</tr>
+<tr>
+<td>D11</td>
+<td>I/O</td>
+<td>PC11</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pin-notes">Pin notes</h2><p>While there is recommended pinout in this document, you can use any different
+pinout.
+You need to put your pinout in the bootloader, and flash the bootloader.
+Then, when you get a UF2 file from Arcade website, it will at runtime look for
+settings in the bootloader and use the right pins.</p>
+<p>There are some restrictions on the pinout:</p>
+<ul>
+<li>screen needs to be on SPI pins (of course); on F4 use SPI1 as it’s faster</li>
+<li>DISPLAY_BL should be on a pin with PWM (so we can dim it)</li>
+<li>MENU button should be a pin which can wake the MCU up from sleep mode (on D51 it requires <code>EIC</code>; on F4 it can be any pin)</li>
+<li>other buttons can be on any pin</li>
+<li>the MENU2 button is optional</li>
+<li>JACK_TX if present needs to be on UART_TX pin on F4, and on PAD0 of a SERCOM with EIC on D51</li>
+<li>JACK_SND if present needs to be on TIM1_CH* pin of F4 and DAC0 of D51 (PA02)</li>
+</ul>
+<p>Of course, if you’re building a guide about how to connect screen and buttons to
+an existing board, all components are really optional. </p>
+<h3 id="generating-bootloader">Generating bootloader</h3><p>If you’re compiling bootloader on your own, you will need to create <code>board.h</code> file.
+Start from an existing, generic arcade board (README in bootloader should have instructions).
+Then:</p>
+<ul>
+<li>if you don’t have accelerometer, remove all lines with <code>ACCELEROMETER</code> word</li>
+<li>if you don’t have vibration motor, remove line for <code>PIN_VIBRATION</code></li>
+<li>if you are not doing a pin header:<ul>
+<li>maybe you can at least leave holes for people to solder a header in?</li>
+<li>otherwise, remove all <code>PIN_Dx</code>, and <code>PIN_SDA</code>, <code>PIN_SCL</code>, <code>PIN_MISO</code>, <code>PIN_MOSI</code>, 
+<code>PIN_SCK</code>, <code>PIN_SERVO_x</code></li>
+</ul>
+</li>
+<li>if you have less than 4 LEDs remove <code>PIN_LEDx</code></li>
+<li>if you do not have a way to disable power to external components, remove <code>PIN_PWREN</code></li>
+<li>if you don’t have JACDAC, remove <code>PIN_JACK_*</code></li>
+<li>if you don’t have JACDAC power, remove <code>PIN_JACK_PWREN</code></li>
+<li>if you don’t have second menu button (it’s not needed), remove <code>PIN_BTN_MENU2</code></li>
+<li>if you don’t have voltage divider for measuring battery level (which isn’t supported yet anyway),
+remove <code>PIN_BATTSENSE</code></li>
+</ul>
+<p>Once you’re done with all these changes, drop the <code>board.h</code> file on <a target="_blank" rel="nofollow noopener" href="https://microsoft.github.io/uf2/patcher/">https://microsoft.github.io/uf2/patcher/</a></p>
+<p>This should load the config, with stuff removed.
+Now you can patch the config with your pin out.
+You should at least change <code>BOOTLOADER_BOARD_ID</code> to a new random value. 
+Don’t generate it by banging on the board or using clever hex string, 
+just use <code>printf &quot;0x%04x%04x\n&quot; $RANDOM $RANDOM</code> to minimize the risk of conflict</p>
+<p>If you’re seeing strange effects on the screen, you can try one of the following
+configs:</p>
+<pre><code>DISPLAY_CFG0 = 0x01000080 
+DISPLAY_CFG1 = 0x00000603
+# or:
+DISPLAY_CFG0 = 0x00000080 
+DISPLAY_CFG1 = 0x00000603
+# or:
+DISPLAY_CFG0 = 0x00000090
+DISPLAY_CFG1 = 0x000e14ff</code></pre><p>For the ST7735 screen:</p>
+<ul>
+<li>the low byte of <code>CFG0</code> is the MADCTL register</li>
+<li>the next two bytes of <code>CFG0</code> are offset X and Y (if the screen doesn’t start at 0, 0)</li>
+<li>the lowest bit of high byte of <code>CFG0</code> can be set to enabled XOR of palette</li>
+<li><code>CFG1</code> is FRMCTR1</li>
+<li>the low byte of <code>CFG2</code> is the desired SPI frequency in MHz</li>
+</ul>
+<p>Once you’re done patching, press “Apply my patch”, which will download new <code>board.h</code>.</p>
+<p>Note that you need to use the patching website to put the right header and size
+in the configuration data.</p>
+<p>It’s also possible to patch a binary file of bootloader with new config using the
+same website.</p>
+<p>The patching website can also remove config entires, just specify the value as <code>null</code>.</p>
+<h3 id="bootloader-protection">Bootloader protection</h3><p>End users will typically update the bootloader by copying a special UF2 file, which
+has a user-level application, which overwrites the bootloader.</p>
+<p>To prevent misuse of this feature (eg., one student emailing to a another a malicious UF2 
+file which writes a non-functional bootloader), some bootloaders (currently only F4)
+implement a protection feature.
+When booting, the bootloader will check if it’s write-protected (this is done by setting bits
+in flash, which only take effect upon reset).
+If the write-protection is disabled, presumably during a bootloader update process,
+the bootloader will present a screen to the user, asking if they really want to update
+the bootloader, and they it may brick the board.
+If the users agrees to upgrade, the app is allowed to run (and presumably update the booloader).
+Otherwise, the protection is re-enabled.</p>
+<p>The default configuration of the bootloaders have this feature disabled to ease the
+development process. To enable it, set <code>BOOTLOADER_PROTECTION = 1</code>.</p>
+<h2 id="variant-notes">Variant notes</h2><h3 id="f4">F4</h3><p>STM32F4 requires an external crystal for stable USB operation.
+The software takes the installed crystal frequency from a specific bootloader location,
+but best to stick to 8MHz.</p>
+<p>Following is the recommended pinout. The recommended pinout for
+header is defined above. It’s consistent with the config for the generic F4
+in the bootloader repo.</p>
+<pre><code># 64 pin package F4
+
+PIN_ACCELEROMETER_INT = PC13
+PIN_ACCELEROMETER_SCL = PB10
+PIN_ACCELEROMETER_SDA = PB03
+
+PIN_BTN_A = PC00
+PIN_BTN_B = PC01
+PIN_BTN_DOWN = PB02
+PIN_BTN_LEFT = PA04
+PIN_BTN_MENU = PC02
+PIN_BTN_MENU2 = PC03
+PIN_BTN_RIGHT = PC09
+PIN_BTN_UP = PB05
+
+PIN_DISPLAY_BL = PB09
+PIN_DISPLAY_CS = PB12
+PIN_DISPLAY_DC = PB04
+PIN_DISPLAY_MISO = PA06
+PIN_DISPLAY_MOSI = PA07
+PIN_DISPLAY_RST = PC12
+PIN_DISPLAY_SCK = PA05
+
+PIN_JACK_PWREN = PC10
+PIN_JACK_SND = PA08
+PIN_JACK_TX = PB06
+
+PIN_LED1 = PB00
+PIN_LED2 = PB01
+PIN_LED3 = PC07
+PIN_LED4 = PC06
+
+PIN_BATTSENSE = PC04
+PIN_PWREN = PA15
+PIN_VIBRATION = PC08</code></pre><pre><code># 48 pin package F4
+
+PIN_ACCELEROMETER_INT = PC13
+PIN_ACCELEROMETER_SCL = PB10
+PIN_ACCELEROMETER_SDA = PB03
+
+PIN_BTN_A = PB08
+PIN_BTN_B = PA15
+PIN_BTN_DOWN = PB02
+PIN_BTN_LEFT = PA04
+PIN_BTN_MENU = PA01
+PIN_BTN_MENU2 = null # or PB01
+PIN_BTN_RIGHT = PA10
+PIN_BTN_UP = PB05
+
+PIN_DISPLAY_BL = PB09
+PIN_DISPLAY_CS = PB12
+PIN_DISPLAY_DC = PB04
+PIN_DISPLAY_MISO = PA06
+PIN_DISPLAY_MOSI = PA07
+PIN_DISPLAY_RST = PB07
+PIN_DISPLAY_SCK = PA05
+
+PIN_JACK_PWREN = PA00
+PIN_JACK_SND = PA08
+PIN_JACK_TX = PB06
+
+PIN_LED1 = PB00
+PIN_LED2 = PB01 # or null
+PIN_LED3 = null
+PIN_LED4 = null
+
+PIN_BATTSENSE = null
+PIN_PWREN = PC15
+PIN_VIBRATION = PC14</code></pre><h3 id="d51">D51</h3><p>JACK_TX needs to be on a pin with external IRQ and PAD0 of some SERCOM.</p>
+<p>JACK_SND needs to be on PA02 (DAC output).</p>
+<h2 id="bootloaders">Bootloaders</h2><ul>
+<li>F4: <a target="_blank" rel="nofollow noopener" href="https://github.com/mmoskal/uf2-stm32f">https://github.com/mmoskal/uf2-stm32f</a></li>
+<li>D51: <a target="_blank" rel="nofollow noopener" href="https://github.com/Microsoft/uf2-samdx1">https://github.com/Microsoft/uf2-samdx1</a></li>
+<li>N840: <a target="_blank" rel="nofollow noopener" href="https://github.com/adafruit/Adafruit_nRF52840_Bootloader">https://github.com/adafruit/Adafruit_nRF52840_Bootloader</a></li>
+</ul>
+<p>The first two bootloaders already implement the CF2 configuration data section.</p>
+
+    </div>
+
+					<div class="hideprint"></div>
+				</div>
+
+				
+<!-- include footer.html -->
+<footer class="ui vertical footer segment hideprint" aria-hidden="false">
+    <div class="ui center aligned container">
+        <div class="ui horizontal link list">
+            <a class="item" href="https://twitter.com/intent/follow?screen_name=MsMakeCode" title="Follow us on Twitter" target="_blank"
+                rel="noopener">
+                <i class="huge icon twitter"></i>
+            </a>
+            <a class="item" href="https://www.instagram.com/makecode/" title="Follow us on Instagram" target="_blank" rel="noopened">
+                <i class="huge icon instagram"></i>
+            </a>
+            <a class="item" href="https://www.youtube.com/channel/UCye7YlvFUUQ1dSy0WZZ1T_Q" title="Subscribe to our YouTube channel"
+                target="_blank" rel="noopened">
+                <i class="huge icon youtube"></i>
+            </a>
+            <a class="item" href="mailto:makecode@microsoft.com" title="Send us an Email" rel="noopened">
+                <i class="huge icon mail"></i>
+            </a>
+        </div>
+        <div class="ui section divider"></div>
+        <div class="ui container horizontal small divided link list">
+            <!-- <a class="item" href="https://makecode.com/contact" target="_blank" rel="noopener">Contact Us</a> -->
+            <a class="item" href="https://makecode.com/privacy" target="_blank" rel="noopener">Privacy &amp; Cookies</a>
+            <a class="item" href="https://makecode.com/termsofuse" target="_blank" rel="noopener"> Terms Of Use</a>
+            <a class="item" href="https://makecode.com/trademarks" target="_blank" rel="noopener">Trademarks</a>
+            <div class="item">© 2019 Microsoft</div>
+        </div>
+        <div class="ui container horizontal small divided link list">
+            <a class="ui centered item" href="https://makecode.com/" title="Microsoft MakeCode" target="_blank" rel="noopener">Powered by Microsoft MakeCode</a>
+        </div>
+    </div>
+</footer>
+
+<!-- end include footer.html -->
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	
+<!-- include macros.html -->
+<!-- macro button -->
+
+<!-- macro vimeo -->
+
+<!-- macro youtube -->
+
+<!-- macro section -->
+
+<!-- macro hide -->
+
+<!-- macro avatar -->
+
+<!-- macro hint -->
+
+<!-- wrapped around ordinary content -->
+<!-- macro main-container -->
+
+<!-- used for 'column' box - they are collected and wrapped in 'column-container' -->
+<!-- macro column -->
+<!-- macro column-container -->
+
+
+<!-- Menu on the top of the page -->
+<!-- macro item -->
+
+<!-- macro divider -->
+
+<!-- macro top-dropdown -->
+
+<!-- macro inner-dropdown -->
+
+
+<!-- TOC in the sidebar -->
+<!-- macro item -->
+
+<!-- macro divider -->
+
+<!-- macro top-dropdown -->
+
+<!-- macro top-dropdown-noheading -->
+
+<!-- macro inner-dropdown -->
+
+<!-- macro nested-dropdown -->
+
+<!-- end include macros.html -->
+
+	
+<!-- include tracking.html -->
+<script type="text/javascript" src="/pxt-arcade/pxtweb.js"></script>
+<script type="text/javascript">
+    window.loadAppInsights = function (includeCookie) {
+        var appInsights=window.appInsights||function(config){
+            function i(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",y=u.createElement(o),r,f;y.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(y);try{t.cookie=u.cookie}catch(p){}for(t.queue=[],t.version="1.0",r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)i("track"+r.pop());return i("set"+s),i("clear"+s),i(h+a),i(c+a),i(h+v),i(c+v),i("flush"),config.disableExceptionTracking||(r="onerror",i("_"+r),f=e[r],e[r]=function(config,i,u,e,o){var s=f&&f(config,i,u,e,o);return s!==!0&&t["_"+r](config,i,u,e,o),s}),t
+        }({
+            instrumentationKey:"9801ed01-c40f-46ec-aa40-2a1742a9e71c",
+            disableAjaxTracking: true,
+            overridePageViewDuration: false,
+            disableExceptionTracking: true,
+            isCookieUseDisabled: !includeCookie,
+            isStorageUseDisabled: !includeCookie,
+            url: "/pxt-arcade/ai.0.js"
+        });
+        window.appInsights=appInsights;
+        appInsights.queue.push(function () {
+            appInsights.context.addTelemetryInitializer(function (envelope) {
+                if (typeof pxtConfig === "undefined") return;
+                var telemetryItem = envelope.data.baseData;
+                telemetryItem.properties = telemetryItem.properties || {};
+                telemetryItem.properties["target"] = pxtConfig.targetId;
+                telemetryItem.properties["stage"] = (pxtConfig.relprefix || "/--").replace(/[^a-z]/ig, '')
+                telemetryItem.properties["cookie"] = includeCookie;
+                if (typeof Windows !== "undefined")
+                    telemetryItem.properties["WindowsApp"] = 1;
+                var userAgent = navigator.userAgent.toLowerCase();
+                var userAgentRegexResult = /\belectron\/(\d+\.\d+\.\d+.*?)(?: |$)/i.exec(userAgent); // Example navigator.userAgent: "Mozilla/5.0 Chrome/61.0.3163.100 Electron/2.0.0 Safari/537.36"
+                if (userAgentRegexResult) {
+                    telemetryItem.properties["Electron"] = 1;
+                    telemetryItem.properties["ElectronVersion"] = userAgentRegexResult[1];
+                }
+                if (typeof pxtElectron !== "undefined") {
+                    telemetryItem.properties["PxtElectron"] = 1;
+                    telemetryItem.properties["ElectronVersion"] = pxtElectron.versions.electronVersion;
+                    telemetryItem.properties["ChromiumVersion"] = pxtElectron.versions.chromiumVersion;
+                    telemetryItem.properties["NodeVersion"] = pxtElectron.versions.nodeVersion;
+                    telemetryItem.properties["PxtElectronVersion"] = pxtElectron.versions.pxtElectronVersion;
+                    telemetryItem.properties["PxtCoreVersion"] = pxtElectron.versions.pxtCoreVersion;
+                    telemetryItem.properties["PxtTargetVersion"] = pxtElectron.versions.pxtTargetVersion;
+                    telemetryItem.properties["PxtElectronIsProd"] = pxtElectron.versions.isProd;
+                }
+            });
+        });
+        appInsights.trackPageView(null, scrubUrl(window.location.toString()), {urlReferrer: scrubUrl(document.referrer.toString())});
+
+        //Scrub the key (if any) from the URL.
+        function scrubUrl(url) {
+            var scriptIdRegex = /(?:\d{5}-\d{5}-\d{5}-\d{5})|(?:_[0-9a-zA-Z]{12})/g;
+            return url.replace(scriptIdRegex, "xxxxx-xxxxx-xxxxx-xxxxx");
+        }
+    }
+    pxt.initAnalyticsAsync();
+</script>
+<!-- end include tracking.html -->
+
+
+</body>
+
+</html>
